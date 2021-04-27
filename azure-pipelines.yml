@@ -10,12 +10,29 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "Hello World"
+      
+      New-Item C:\temp\test.html
+      
+      Set-Content C:\temp\test.html '<!DOCTYPE html>
+      <html>
+      <body>
+      
+      <h1>My First Heading</h1>
+      <p>My first paragraph.</p>
+      
+      </body>
+      </html>'
+
+      - task: PublishHtmlReport@1
+        inputs:
+          reportDir: 'C:\temp\test.html'
 
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 
