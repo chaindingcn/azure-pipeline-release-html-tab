@@ -30,9 +30,9 @@ steps:
       </body>
       </html>'
 
-      - task: PublishHtmlReport@1
-        inputs:
-          reportDir: 'C:\temp\test.html'
+- task: PublishHtmlReport@1
+  inputs:
+    reportDir: 'C:\temp\test.html'
 
 
 
