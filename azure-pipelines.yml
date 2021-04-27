@@ -32,6 +32,7 @@ steps:
 
 - task: PublishHtmlReport@1
   inputs:
+    tabName: 'Report'
     reportDir: 'C:\temp\test.html'
 
 
