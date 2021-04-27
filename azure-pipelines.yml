@@ -18,9 +18,9 @@ steps:
       
       Write-Host "Hello World"
       
-      New-Item C:\temp\test.html
+      New-Item test.html
       
-      Set-Content C:\temp\test.html '<!DOCTYPE html>
+      Set-Content test.html '<!DOCTYPE html>
       <html>
       <body>
       
@@ -33,7 +33,7 @@ steps:
 - task: PublishHtmlReport@1
   inputs:
     tabName: 'Report'
-    reportDir: 'C:\temp\test.html'
+    reportDir: 'test.html'
 
 
 
